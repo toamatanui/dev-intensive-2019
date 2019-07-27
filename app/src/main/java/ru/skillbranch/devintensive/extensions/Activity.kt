@@ -7,7 +7,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import ru.skillbranch.devintensive.utils.Utils.convertDpToPx
 
-fun Activity.hideKeyboard(){
+fun Activity.hideKeyboard() {
     val focus = this.currentFocus
     focus?.let {
         (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.
