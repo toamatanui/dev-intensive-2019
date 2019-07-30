@@ -34,7 +34,7 @@ object Utils {
     }
 
     private fun fillTranslitMap(): HashMap<Char, String> {
-        val map = hashMapOf<Char, String>()
+        val map: HashMap<Char, String> = hashMapOf<Char, String>()
         map['а'] = "a"
         map['б'] = "b"
         map['в'] = "v"
