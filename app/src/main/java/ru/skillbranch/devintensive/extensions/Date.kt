@@ -10,8 +10,8 @@ fun Date.format(pattern: String = "HH:mm:ss dd.MM.yy"): String {
     return dateFormat.format(this)
 }
 
-fun Date.add(value: Int, units: TimeUnits = SECOND): Date {
-    this.time += units.value * value
+fun Date.add(mean: Int, units: TimeUnits = SECOND): Date {
+    this.time += units.value * mean
     return this
 }
 

@@ -62,7 +62,7 @@ object Utils {
         map['ч'] = "ch"
         map['ш'] = "sh"
         map['щ'] = "sh'"
-        map['ъ'] = ""
+        map['ъ'] = "'"
         map['ы'] = "i"
         map['ь'] = ""
         map['э'] = "e"
