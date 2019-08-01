@@ -47,7 +47,7 @@ class Bender (var status: Status = Status.NORMAL, var question: Question = Quest
     }
 
     enum class Question(val questionText: String, val answer: List<String>){
-        NAME("Как меня зовут?", listOf("бендер", "bender")) {
+        NAME("Как меня зовут?", listOf("Бендер", "Bender")) {
             override fun nextQuestion(): Question = PROFESSION
             override fun validate(answer: String): Boolean = answer.trim().firstOrNull()?.isUpperCase() ?: false
         },
