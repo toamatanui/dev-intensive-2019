@@ -2,17 +2,17 @@ package ru.skillbranch.devintensive.models
 
 class Bender (var status: Status = Status.NORMAL, var question: Question = Question.NAME){
 
-    fun askQuestion():String = question.question
+    fun askQuestion():String = question.questionText
 
     fun listenAnswer(answer:String):Pair<String, Triple<Int, Int, Int>>{
         return when(question){
-            Question.IDLE -> question.question to status.color
-            else -> "${checkAnswer(answer)}\n${question.question}" to status.color
+            Question.IDLE -> question.questionText to status.color
+            else -> "${checkAnswer(answer)}\n${question.questionText}" to status.color
         }
     }
 
-    private fun checkAnswer(answer: String): String {
-        return if (question.answer.contains(answer)) {
+    private fun checkAnswer(response: String): String {
+        return if (question.answer.contains(response)) {
             question = question.nextQuestion()
             "Отлично - ты справился"
         }
@@ -46,7 +46,7 @@ class Bender (var status: Status = Status.NORMAL, var question: Question = Quest
         }
     }
 
-    enum class Question(val question: String, val answer: List<String>){
+    enum class Question(val questionText: String, val answer: List<String>){
         NAME("Как меня зовут?", listOf("бендер", "bender")) {
             override fun nextQuestion(): Question = PROFESSION
             override fun validate(answer: String): Boolean = answer.trim().firstOrNull()?.isUpperCase() ?: false
